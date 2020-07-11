@@ -11,15 +11,14 @@ export class HomeComponent {
   @Input('nuvem') nuvem: string;
   @Input('aeroporto') aeroportos: string;
   apiService: apiService;
-  resultado
-  
+    
   constructor(_apiService : apiService) {
     this.apiService = _apiService;
   }     
 
   onAnalise() {
-    this.resultado = this.apiService.getCaminho(this.nuvem, this.aeroportos);
-    console.log(this.resultado);
+   
+    console.log(this.apiService.getCaminho(this.nuvem, this.aeroportos));
   }
    
 }
