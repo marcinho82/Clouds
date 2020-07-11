@@ -17,9 +17,8 @@ export class HomeComponent {
     this.apiService = _apiService;
   }     
 
-  onAnalise() {
-   
-    this.apiService.getCaminho(this.nuvem, this.aeroportos).then(res => { this.data = res });
+  onAnalise() {   
+    this.apiService.getCaminho(this.nuvem, this.aeroportos).then(res => this.data = res || []);
   }
    
 }
