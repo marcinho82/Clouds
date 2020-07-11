@@ -18,8 +18,12 @@
       <button class="btn btn-primary" (click)="onAnalise()">Analisar</button>
    </div>
    
- <div class="container">
-   {{resultado}}
+ <div class="container" *ngFor="let dados of data">
+   <table>
+     <tr>
+       {{dados}}
+     </tr>
+   </table>   
  </div>
 
 
