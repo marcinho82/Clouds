@@ -1,8 +1,10 @@
 ﻿
 using api.CloudGeo.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,9 +19,10 @@ namespace api.CloudGeo.Controllers
 
         // POST api/<CloudsController>
         [HttpPost]
-        public IEnumerable<string> Post(Weather weather)
+        public IEnumerable<Array> Post(Weather weather)
         {
-           return calculate.Dias(weather);                   
+            var result = calculate.Dias(weather);
+            return result.ToArray();                   
            
         }       
     }

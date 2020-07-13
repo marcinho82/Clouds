@@ -8,14 +8,14 @@ namespace api.CloudGeo.Calculate
 {
     public class Calculate
     {
-        public string[] Dias(Weather weather)
+        public Array[] Dias(Weather weather)
         {
             string[,] terreno = new string[10, 10];
             Random numero = new Random();
             int linhaUltima = 0;
             int colunaUltima = 0;
             bool boolean = false;
-            string[] result = new string[0];
+            Array[] result = new Array[0];
 
             for (int i = 0; i <= 9; i++)
             {
@@ -61,7 +61,7 @@ namespace api.CloudGeo.Calculate
                     terreno[i, j] = ".";
                     terreno[j, j] = ".";
                     System.Array.Resize(ref result, j + 1);
-                    result[j] = Newtonsoft.Json.JsonConvert.SerializeObject(terreno);
+                    result[j] = terreno;
                     if (terreno[i, j] == terreno[linhaUltima, colunaUltima])
                     {
                         boolean = true;

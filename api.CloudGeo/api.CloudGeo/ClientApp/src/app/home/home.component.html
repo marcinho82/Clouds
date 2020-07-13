@@ -19,10 +19,10 @@
    </div>
    
 
- <div class="container" *ngFor="let dados of data">
-   <table>
-     <tr>
-       <td>{{dados}}</td>
+ <div class="container" *ngFor="let dados of data;">
+   <table class="table table-striped">
+     <tr> 
+       <td *ngFor="let item of dados">{{item}}</td>
     </tr>
    </table>   
  </div>

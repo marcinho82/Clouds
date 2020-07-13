@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+
 import { map, retry } from 'rxjs/operators';
+import { Template } from '@angular/compiler/src/render3/r3_ast';
 
 @Injectable()
 export class apiService {
@@ -12,7 +14,7 @@ export class apiService {
        getCaminho(nuvem: any, caminho: any) {
          const headers = { 'content-type': 'application/json' }
          return this.http.post(this.connection, JSON.stringify({ 'nuvem': nuvem, 'aeroporto': caminho }), { 'headers': headers })
-           .pipe(retry(1), map(data => data)).toPromise();
+           .pipe(map(data => data)).toPromise();
             
        }
   
